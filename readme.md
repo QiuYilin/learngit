@@ -4,7 +4,9 @@
 # git入门
 
 -------------------
-#使用git类网站
+
+# 使用git类网站
+
 1.注册账号
 2.上传ssh公钥 
 如果没有创建：
@@ -12,16 +14,16 @@
 ssh-keygen -t rsa -C "youremail@example.com"
 ```
 已经创建：在主目录.ssh文件中，id_rsa是私钥，id_rsa.pub是公钥。
-##使用github
+## 使用github
 在GitHub上，可以任意Fork开源仓库；
 自己拥有Fork后的仓库的读写权限；
 可以推送pull request给官方仓库来贡献代码。
-##使用码云
+## 使用码云
 中国版的github,速度比较快
 码云的免费版本也提供私有库功能，只是有5人的成员上限。
 
 -------------------
-#自定义git
+# 自定义git
 ##配置基本信息
 
 --global参数是全局参数，也就是这些命令在这台电脑的所有Git仓库下都有用。
@@ -29,11 +31,11 @@ ssh-keygen -t rsa -C "youremail@example.com"
 $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 ```
-##配置文件名颜色
+## 配置文件名颜色
 ```
 git config --global color.ui true
 ```
-##忽略特殊文件
+## 忽略特殊文件
 
 *.gitignore:        https://github.com/github/gitignore*
 通过.gitignore忽略自动生成和敏感的配置文件
@@ -47,7 +49,7 @@ git config --global color.ui true
 ```
 !*.zip  //加感叹号可以把文件忽略的同时添加到版本管理
 ```
-##配置别名
+## 配置别名
 很大程度上提高了效率
 ```
 git config --global alias.st status//用 st代替status
@@ -61,18 +63,18 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 配置文件在.git/config中，可以在里面直接修改
 
 -------------------
-#搭建git服务器
+# 搭建git服务器
 ##安装git
 ```
 sudo apt-get install git//搭建git服务器
 ```
-##创建一个git用户，用来运行git服务
+## 创建一个git用户，用来运行git服务
 ```
 sudo adduser git//创建一个git用户，用来运行git服务
 ```
-##创建证书登录
+## 创建证书登录
 收集所有需要登录的用户的公钥，就是他们自己的id_rsa.pub文件，把所有公钥导入到/home/git/.ssh/authorized_keys文件里，一行一个。人多可以用Gitosis.
-##初始化Git仓库
+## 初始化Git仓库
 
 ```
 sudo git init --bare sample.git
@@ -81,7 +83,7 @@ sudo git init --bare sample.git
 ```
 sudo chown -R git:git sample.git
 ```
-##禁用shell登录
+## 禁用shell登录
 编辑/etc/passwd文件
 
 ```
@@ -92,21 +94,21 @@ git:x:1001:1001:,,,:/home/git:/bin/bash
 ```
 git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
 ```
-##克隆远程仓库
+## 克隆远程仓库
 
 ```
 git clone git@server:/srv/sample.git
 ```
-##权限管理
+## 权限管理
 
 Gitolite
 
 -------------------
 
-#本地&远程库
+# 本地&远程库
 
 网站上新建一个库
-##本地和远程关联
+## 本地和远程关联
 ```
 git remote add origin http://github.com/username/learngit.git  //本地仓库下运行地址也可以是git@github.com:username/learngit.git  https比较慢，每次推送需要口令
 ```
@@ -115,22 +117,22 @@ git remote -v//查看关联情况
 ```
 *命名不同的远程库可以同时关联到两个不同的git网站*
 
-##本地→远程
+## 本地→远程
 ```
 git push -u origin master//将本地库的所有内容推送到远程库，首次加u可以简化日后的命令
 ```
-##远程→本地
+## 远程→本地
 ```
 git clone git@github.com:michaelliao/gitskills.git//ssh比https快
 ```
-##不再关联
+## 不再关联
 ```
 git remote rm origin//
 ```
 -------------------
-#删除操作
+# 删除操作
 
-###删除文件
+### 删除文件
 
 ```
 rm <file>//删除本地文件
@@ -169,7 +171,7 @@ git commit//把暂存区的东西放到分支
 ```
 git add . //所有改动放到暂存区
 ```
-##时光穿梭机
+## 时光穿梭机
  
 
 ```
@@ -179,7 +181,7 @@ git status //当前库的状态，有没有修改没提交
 ```
 git diff <file> //查看文件差异
 ```
-###版本回退
+### 版本回退
 
 ```
 git log//修改的历史记录
@@ -202,16 +204,16 @@ cat <file>//查看文档
 ```
 git reflog//操作记录，可以看到commit id
 ```
-###工作区和暂存区
+### 工作区和暂存区
 工作区——git add——暂存区（stage/index）——git commit——版本库
 
-###管理修改
+### 管理修改
 
 ```
 git diff HEAD -- readme.txt//工作区和最新版本的区别
 ```
 
-###撤销修改
+### 撤销修改
 
 ```
 git checkout -- file//撤销修改，回到最近一次git add 或 git commit
@@ -223,12 +225,12 @@ git reset HEAD file//撤销掉暂存区里的修改
 
 
 
-###从远程库克隆
+### 从远程库克隆
 
 ```
 git clone
 ```
-##分支管理
+## 分支管理
 
 ```
 git checkout -b dev//创建并切换到dev分支 branch checkout  
@@ -245,12 +247,12 @@ git merge dev//合并分支
 ```
 git branch -d dev//删除分支
 ```
-###解决冲突
+### 解决冲突
 
 ```
 git log --graph --pretty=oneline --abbrev-commit//查看分支合并情况
 ```
-###分支管理策略
+### 分支管理策略
 
 fast forward    --no-ff
 
@@ -258,7 +260,7 @@ fast forward    --no-ff
 git merge --no-ff -m "merge with no-ff" dev //禁用fast forward模式
 ```
 --no-ff可以看出曾经做过合并
-###Bug分支
+### Bug分支
 
 ```
 git stash//保存工作现场
@@ -266,7 +268,7 @@ git stash list//查看工作现场
 git stash apply;git stash drop
 git stash pop
 ```
-###feature分支
+### feature分支
 
 ```
 touch <file> //新建文件
@@ -275,12 +277,12 @@ touch <file> //新建文件
 ```
 git branch -D feature-vulcan//删除没有合并的分支
 ```
-###多人协作
+### 多人协作
 
 ```
 git remote//查看远程库的信息，加-v更详细
 ```
-####推送分支
+#### 推送分支
 
 ```
 git push origin master//将该分支上所有本地推送到远程库
@@ -290,17 +292,17 @@ git push origin master//将该分支上所有本地推送到远程库
 git push origin dev//推送其他分支
 ```
 master时刻推送，dev是开发分支，所有成员都在用，要同步，单人的可以推送不着急
-####抓取分支
+#### 抓取分支
 
 ```
 git pull
 git branch --set-upstream dev origin/<branch>
 git pull
 ```
-##标签管理
+## 标签管理
 tag 版本库快照  
 对应某个commit 编号比较方便
-###创建标签
+### 创建标签
 
 ```
 git tag <name>//打标签
@@ -310,7 +312,7 @@ git show <tagname>//查看标签信息
 git tag -a v0.1 -m "version 0.1 released" 3628164//带说明的标签
 git tag -s <tagname> -m "blablabla..."//用PGP标签签名，报错需要自己配
 ```
-###操作标签
+### 操作标签
 
 ```
 git push origin <tagname>//推送本地标签
