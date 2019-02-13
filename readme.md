@@ -8,12 +8,32 @@
 # 使用git类网站
 
 1.注册账号
-2.上传ssh公钥 
+2.上传ssh公钥
 如果没有创建：
 ```
 ssh-keygen -t rsa -C "youremail@example.com"
 ```
 已经创建：在主目录.ssh文件中，id_rsa是私钥，id_rsa.pub是公钥。
+将它粘帖到github帐号管理中的添加SSH key界面中。 
+打开github帐号管理中的添加SSH key界面的步骤如下： 
+1. 登录github 
+2. 点击右上方的Accounting settings图标 
+3. 选择 SSH key 
+4. 点击 Add SSH key 
+在出现的界面中填写SSH key的名称，填一个你自己喜欢的名称即可，然后将上面拷贝的~/.ssh/id_rsa.pub文件内容粘帖到key一栏，在点击“add key”按钮就可以了。 
+添加过程github会提示你输入一次你的github密码
+
+测试刚才添加的github密钥是否成功： 
+在Git Bash Here中输入 ssh git@github.com 回车 
+会出现一个提示，输入 yes 回车，可以看见一个successfully的提示信息，说明添加成功，可以使用了。
+然后就可以git clone github上的代码库了
+
+--------------------- 
+作者：流风雨情 
+来源：CSDN 
+原文：https://blog.csdn.net/qq_29232943/article/details/53523434 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
 ## 使用github
 在GitHub上，可以任意Fork开源仓库；
 自己拥有Fork后的仓库的读写权限；
