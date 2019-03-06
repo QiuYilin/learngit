@@ -185,7 +185,7 @@ git init
 
 ```
 git add <file>//将文件放到暂存区
-git commit//把暂存区的东西放到分支
+git commit -m "XXXXXXX"//把暂存区的东西放到分支
 ```
 
 ```
