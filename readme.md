@@ -225,7 +225,7 @@ cat <file>//查看文档
 git reflog//操作记录，可以看到commit id
 ```
 ### 工作区和暂存区
-工作区——git add——暂存区（stage/index）——git commit——版本库
+工作区——git add——暂存区（stage/index）——git commit——版本库 git push -u origin master
 
 ### 管理修改
 
