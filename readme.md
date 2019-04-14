@@ -256,7 +256,7 @@ git clone
 ## 分支管理
 
 ```
-git checkout -b dev//创建并切换到dev分支 branch checkout  
+git checkout -b dev//创建并切换到dev分支 branch checkout  (先提交本来分支的内容)
 ```
 
 ```
