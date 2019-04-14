@@ -305,6 +305,11 @@ git branch -D feature-vulcan//删除没有合并的分支
 ```
 git remote//查看远程库的信息，加-v更详细
 ```
+查看他人提交的分支
+```
+git fetch//取回所有分支（branch）的更新
+git brance -r//可以用来查看远程分支，-a选项查看所有分支
+```
 #####私有库添加用户
 在网页生成邀请链接
 
