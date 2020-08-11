@@ -352,4 +352,8 @@ git tag -d <tagname>//删除本地标签
 git push origin :refs/tags/<tagname>//删除一个远程标签
 ```
 
+查看用户名
+$ git config user.name
+$ git config user.email
+
 
