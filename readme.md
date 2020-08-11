@@ -28,11 +28,7 @@ ssh-keygen -t rsa -C "youremail@example.com"
 会出现一个提示，输入 yes 回车，可以看见一个successfully的提示信息，说明添加成功，可以使用了。
 然后就可以git clone github上的代码库了
 
---------------------- 
-作者：流风雨情 
-来源：CSDN 
-原文：https://blog.csdn.net/qq_29232943/article/details/53523434 
-版权声明：本文为博主原创文章，转载请附上博文链接！
+
 
 ## 使用github
 在GitHub上，可以任意Fork开源仓库；
@@ -43,6 +39,7 @@ ssh-keygen -t rsa -C "youremail@example.com"
 码云的免费版本也提供私有库功能，只是有5人的成员上限。
 
 -------------------
+
 # 自定义git
 ##配置基本信息(首次安装必须)
 
@@ -355,5 +352,9 @@ git push origin :refs/tags/<tagname>//删除一个远程标签
 查看用户名
 $ git config user.name
 $ git config user.email
+
+
+和VS绑定
+一样需要SSH设置
 
 
